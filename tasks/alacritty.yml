@@ -1,0 +1,34 @@
+- name: Create temporary directory
+  tempfile:
+      state: directory
+  register: alacritty_dir
+  tags:
+    - install
+    - alacritty
+- name: Clone alacritty
+  git:
+      force: true
+      repo: 'https://github.com/alacritty/alacritty'
+      dest: '{{ alacritty_dir.path }}'
+  tags:
+    - install
+    - alacritty
+
+- name: Build alacritty
+  command: >-
+      cargo deb
+      --install
+      --release
+  args:
+      chdir: '{{ alacritty_dir.path }}'
+  tags:
+    - install
+    - alacritty
+
+- name: Delete temporary directory
+  file:
+      state: absent
+      path: '{{ alacritty_dir.path }}'
+  tags:
+    - install
+    - alacritty
