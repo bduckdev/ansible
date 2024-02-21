@@ -5,6 +5,7 @@
   pre_tasks:
     - name: Update Apt
       become: true
+      become_user: bduck
       apt:
         force_apt_get: true
         update_cache: true
