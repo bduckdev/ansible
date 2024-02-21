@@ -1,6 +1,6 @@
 - name: Install rustup
   become: true
-  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
   tags:
     - install
     - rustup
