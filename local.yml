@@ -25,7 +25,7 @@
     - include: tasks/nvim.yml
     - include: tasks/rustup.yml
     - include: tasks/zsh.yml
-    - include: tasks/alacritty.yml
+#    - include: tasks/alacritty.yml
     - include: tasks/productivity-tools.yml
     - include: tasks/rustup.yml
     - include: tasks/wezterm.yml
