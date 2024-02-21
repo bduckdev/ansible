@@ -16,15 +16,15 @@
         - install
         - core
   tasks:
-    - include: tasks/core.yml
-    - include: tasks/git-setup.yml
     - include: tasks/ssh.yml
+    - include: tasks/git-setup.yml
+    - include: tasks/core.yml
+    - include: tasks/node.yml
+    - include: tasks/npm-packages.yml
     - include: tasks/zsh.yml
     - include: tasks/brave.yml
     - include: tasks/dotfiles.yml
-    - include: tasks/node.yml
     - include: tasks/rustup.yml
-    - include: tasks/npm-packages.yml
     - include: tasks/nvim.yml
     - include: tasks/rustup.yml
 #    - include: tasks/alacritty.yml
